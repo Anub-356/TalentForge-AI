@@ -1,30 +1,48 @@
 # TalentForge AI
 
-**Evidence-Based Candidate Intelligence & Deterministic Ranking Engine**  
+**Evidence-Based Hiring Intelligence & Deterministic Ranking Engine**  
 *Official Submission for the Redrob India Runs Data & AI Challenge*
 
 ---
 
 ## Executive Summary
 
-**TalentForge AI** is an evidence-based evaluation pipeline designed to replace superficial ATS screening with verifiable engineering truth. Built for the **Redrob India Runs Data & AI Challenge**, it deterministically evaluates raw candidate profiles, cross-examines engineering claims against concrete signals, and outputs a reproducible top-100 candidate ranking backed by transparent audit reasoning.
+**TalentForge AI** is an evidence-based hiring intelligence platform built for the **Redrob India Runs Data & AI Challenge**. Instead of ranking candidates using keywords alone, it combines career relevance, verified skills, behavioral signals, fraud detection, and explainable scoring to generate a deterministic Top-100 shortlist from the competition dataset.
 
 ### The Paradigm Shift
 
-```text
-Traditional ATS ──► Keyword Matching ──► Resume Inflation & Hiring Noise
-                                                │
-                                                ▼
-Explainable Ranking ◄── Trust Aggregation ◄── Fraud Detection ◄── Evidence Verification ◄── TalentForge AI
+```mermaid
+flowchart LR
+    ATS["Traditional ATS"] --> KW["Keyword Matching"]
+    KW --> Noise["Resume Inflation<br/>& Hiring Noise"]
+    Noise --> Pipeline["TalentForge AI"]
+    Pipeline --> Eval["Multi-Signal Evaluation"]
+    Eval --> Fraud["Fraud Detection"]
+    Fraud --> Trust["Candidate Trust Scoring"]
+    Trust --> Shortlist["Explainable Top-100 Shortlist"]
 ```
+
+---
+
+## Core Features
+
+- ✅ **Deterministic Ranking Engine**: Stable CPU-only evaluation pipeline guaranteeing identical results across runs.
+- ✅ **Career Evidence Scoring**: Evaluates verifiable engineering depth and experience relevance across candidate histories.
+- ✅ **JD-aware Skill Evaluation**: Cross-examines claimed technical competencies against job description requirements.
+- ✅ **Behavioral & Leadership Intelligence**: Quantifies career progression, tenure stability, and leadership trajectory.
+- ✅ **Fraud & Padding Detection**: Automatically penalizes buzzword stuffing, duplicate entries, and AI-padded content.
+- ✅ **Candidate Trust Scoring**: Computes an internal profile consistency metric to filter unverified claims.
+- ✅ **Explainable Rankings**: Generates transparent, audit-ready reasoning breakdowns for every shortlisted candidate.
+- ✅ **100% Offline Evaluation**: Zero live API lookups or web scraping during ranking execution.
+- ✅ **`O(N log K)` Streaming**: High-efficiency bounded min-heap memory architecture (`K=100`).
 
 ---
 
 ## Problem
 
-In today's engineering recruitment landscape, traditional ATS platforms rely heavily on surface-level keyword matching. This algorithmic flaw has created a systemic vulnerability to **resume inflation**, AI-generated buzzword stuffing, exaggerated metrics, and unverified project descriptions. As a result, hiring pipelines are saturated with severe hiring noise, penalizing authentic engineering talent while rewarding keyword optimization. 
+In today's engineering recruitment landscape, traditional ATS platforms rely heavily on surface-level keyword matching. This algorithmic flaw creates a systemic vulnerability to **resume inflation**, AI-generated buzzword stuffing, exaggerated metrics, and unverified project descriptions. As a result, recruiter shortlists are saturated with severe hiring noise, penalizing authentic engineering talent while rewarding keyword optimization. 
 
-**TalentForge AI** resolves this structural failure through **evidence-based verification**. Rather than trusting unverified text, our deterministic evaluation engine verifies engineering depth across concrete signals (career relevance, verified competence, skill matching, and leadership progression), executes multi-layer honeypot and padding fraud detection, and computes a mathematically rigorous trust score. Every ranked candidate is backed by explainable, audit-ready reasoning.
+**TalentForge AI** resolves this structural failure through **multi-signal candidate evaluation**. Rather than blindly trusting unverified text, our deterministic evaluation engine cross-examines engineering claims against concrete structured signals in the candidate dataset, executes multi-layer padding fraud detection, and computes an internal candidate trust score. Every ranked candidate is backed by explainable audit reasoning.
 
 ---
 
@@ -32,18 +50,18 @@ In today's engineering recruitment landscape, traditional ATS platforms rely hea
 
 ```mermaid
 flowchart TD
-    Inputs["Candidate Inputs<br/>• Candidate Resume<br/>• GitHub & Projects<br/>• LinkedIn<br/>• Assessments"] --> EV["Evidence Verification"]
-    EV --> FD["Fraud Detection"]
-    FD --> TA["Trust Aggregation"]
-    TA --> ER["Explainable Ranking"]
-    ER --> RI["Recruiter Intelligence Dashboard"]
+    Inputs["Structured Candidate Stream<br/>• Career History & Experience<br/>• Technical Skills & Projects<br/>• Educational Background<br/>• Assessment Signals"] --> Eval["Multi-Signal Evaluation Engine"]
+    Eval --> Fraud["Fraud & Padding Detector"]
+    Fraud --> Trust["Candidate Trust Scoring"]
+    Trust --> Rank["Explainable Deterministic Ranker"]
+    Rank --> Output["Top-100 Submission CSV & Audit Log"]
 ```
 
 ---
 
 ## Quickstart & Judge Reproduction
 
-This repository is optimized for instant verification by competition judges. The evaluation pipeline runs completely offline on standard CPU hardware with zero external dependencies during execution.
+This repository is optimized for instant verification by competition judges. The evaluation pipeline runs completely offline on standard CPU hardware with zero external network dependencies during execution.
 
 ### 1. Setup Environment
 ```powershell
@@ -94,7 +112,7 @@ TalentForge-AI/
 
 ## Recruiter Intelligence Demo App
 
-While the competition ranking pipeline (`rank.py`) executes as a standalone offline script, we also provide a full-stack interactive demonstration web application for visualizing candidate rankings and evidence intelligence.
+While the competition ranking pipeline (`rank.py`) executes as a standalone offline script, we also provide a full-stack interactive demonstration web application for visualizing candidate rankings and evaluation intelligence.
 
 ### Start Backend API
 ```powershell
@@ -114,9 +132,9 @@ Open your browser to `http://localhost:3000` to explore the interactive dashboar
 
 ## Key System Properties
 
-- **100% Offline & Deterministic**: Zero network requests or LLM API calls during ranking execution; guarantees bit-for-bit reproducibility across runs.
-- **Bounded Memory Execution**: Utilizes a highly efficient `O(N log K)` min-heap architecture (`K=100`) to stream massive candidate datasets without out-of-memory bottlenecks.
-- **Explainable Audit Trail**: Every scored candidate includes transparent reasoning breakdowns explaining exactly why their evidence earned their ranking position.
+- **100% Offline & Deterministic**: Zero network requests or live API lookups during ranking execution; guarantees bit-for-bit reproducibility across runs.
+- **Bounded Memory Streaming**: Utilizes a highly efficient `O(N log K)` min-heap architecture (`K=100`) to stream massive candidate JSONL files without memory bottlenecks.
+- **Explainable Audit Trail**: Every scored candidate includes transparent reasoning breakdowns explaining exactly why their signals earned their ranking position.
 
 ---
 
