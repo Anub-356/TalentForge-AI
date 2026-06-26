@@ -51,13 +51,26 @@ flowchart LR
 
 ---
 
-## UI Showcase & Demonstration
+## UI Showcase
 
-While the competition ranking script executes offline in standard terminal environments, we also provide an interactive web dashboard for recruiters and candidates.
+### Landing Page
+![Landing Page](assets/screenshots/landing-page.png)
 
-| Landing Page | AI Intelligence & Dashboard |
-| :---: | :---: |
-| ![Landing Page Preview](frontend/public/Landing.png) | ![Recruiter Dashboard Preview](frontend/public/ai-hero.png) |
+Evidence-based hiring landing experience.
+
+---
+
+### Recruiter Command Center
+![Recruiter Command Center](assets/screenshots/recruiter-dashboard.png)
+
+Autonomous verification dashboard for recruiters.
+
+---
+
+### Intelligence Board
+![Intelligence Board](assets/screenshots/intelligence-board.png)
+
+Explainable candidate ranking and trust intelligence.
 
 ---
 
