@@ -7,7 +7,7 @@
 
 ## Executive Summary
 
-**TalentForge AI** is an evidence-based hiring intelligence platform built for the **Redrob India Runs Data & AI Challenge**. Instead of ranking candidates using keywords alone, it combines career relevance, verified skills, behavioral signals, fraud detection, and explainable scoring to generate a deterministic Top-100 shortlist from the competition dataset.
+**TalentForge AI** is an evidence-based hiring intelligence platform built for the **Redrob India Runs Data & AI Challenge**. Instead of ranking candidates using keywords alone, it combines career relevance, technical skill evaluation, behavioral signals, fraud detection, and explainable scoring to generate a deterministic Top-100 shortlist from the competition dataset.
 
 ### The Paradigm Shift
 
@@ -18,7 +18,7 @@ flowchart LR
     Noise --> Pipeline["TalentForge AI"]
     Pipeline --> Eval["Multi-Signal Evaluation"]
     Eval --> Fraud["Fraud Detection"]
-    Fraud --> Trust["Candidate Trust Scoring"]
+    Fraud --> Trust["Candidate Consistency Scoring"]
     Trust --> Shortlist["Explainable Top-100 Shortlist"]
 ```
 
@@ -28,10 +28,10 @@ flowchart LR
 
 - ✅ **Deterministic Ranking Engine**: Stable CPU-only evaluation pipeline guaranteeing identical results across runs.
 - ✅ **Career Evidence Scoring**: Evaluates verifiable engineering depth and experience relevance across candidate histories.
-- ✅ **JD-aware Skill Evaluation**: Cross-examines claimed technical competencies against job description requirements.
-- ✅ **Behavioral & Leadership Intelligence**: Quantifies career progression, tenure stability, and leadership trajectory.
-- ✅ **Fraud & Padding Detection**: Automatically penalizes buzzword stuffing, duplicate entries, and AI-padded content.
-- ✅ **Candidate Trust Scoring**: Computes an internal profile consistency metric to filter unverified claims.
+- ✅ **JD-aware Technical Skill Evaluation**: Cross-examines claimed technical competencies against job description requirements.
+- ✅ **Behavioral Intelligence**: Quantifies career progression, tenure stability, and professional trajectory.
+- ✅ **Fraud & Padding Detection**: Automatically penalizes keyword stuffing, timeline overlap, and AI-padded content.
+- ✅ **Candidate Consistency Scoring**: Computes an internal profile consistency metric to filter unsupported claims.
 - ✅ **Explainable Rankings**: Generates transparent, audit-ready reasoning breakdowns for every shortlisted candidate.
 - ✅ **100% Offline Evaluation**: Zero live API lookups or web scraping during ranking execution.
 - ✅ **`O(N log K)` Streaming**: High-efficiency bounded min-heap memory architecture (`K=100`).
@@ -42,7 +42,7 @@ flowchart LR
 
 In today's engineering recruitment landscape, traditional ATS platforms rely heavily on surface-level keyword matching. This algorithmic flaw creates a systemic vulnerability to **resume inflation**, AI-generated buzzword stuffing, exaggerated metrics, and unverified project descriptions. As a result, recruiter shortlists are saturated with severe hiring noise, penalizing authentic engineering talent while rewarding keyword optimization. 
 
-**TalentForge AI** resolves this structural failure through **multi-signal candidate evaluation**. Rather than blindly trusting unverified text, our deterministic evaluation engine cross-examines engineering claims against concrete structured signals in the candidate dataset, executes multi-layer padding fraud detection, and computes an internal candidate trust score. Every ranked candidate is backed by explainable audit reasoning.
+**TalentForge AI** resolves this structural failure through **multi-signal candidate evaluation**. Rather than blindly trusting unverified text, our deterministic evaluation engine cross-examines engineering claims against concrete structured signals in the candidate dataset, executes multi-layer padding fraud detection, and computes an internal trust score. Every ranked candidate is backed by explainable audit reasoning.
 
 ---
 
@@ -52,7 +52,7 @@ In today's engineering recruitment landscape, traditional ATS platforms rely hea
 flowchart TD
     Inputs["Structured Candidate Stream<br/>• Career History & Experience<br/>• Technical Skills & Projects<br/>• Educational Background<br/>• Assessment Signals"] --> Eval["Multi-Signal Evaluation Engine"]
     Eval --> Fraud["Fraud & Padding Detector"]
-    Fraud --> Trust["Candidate Trust Scoring"]
+    Fraud --> Trust["Candidate Consistency Scoring"]
     Trust --> Rank["Explainable Deterministic Ranker"]
     Rank --> Output["Top-100 Submission CSV & Audit Log"]
 ```
