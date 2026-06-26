@@ -1,0 +1,55 @@
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+venv/
+.venv/
+*.pyc
+
+# ── Environment & Secrets ─────────────────────
+.env
+.env.local
+*.key
+*.pem
+
+# ── Node ──────────────────────────────────────
+node_modules/
+dist/
+build/
+.cache/
+
+# ── IDE & Agentic Temporary ───────────────────
+.vscode/
+.idea/
+.gemini/
+.agents/
+*.swp
+*.swo
+*~
+
+# ── OS & Mac Junk ─────────────────────────────
+.DS_Store
+Thumbs.db
+__MACOSX/
+
+# ── Large Binary & Competition Outputs ────────
+*.zip
+*.tar.gz
+*.log
+*.db
+*.docx
+submission.csv
+candidates.jsonl
+dataset/
+
+# Allow specific necessary text documents and sample data
+!requirements.txt
+!LICENSE
+!README.md
+!samples/
+
+# Caches
+.pytest_cache/
+.mypy_cache/
+

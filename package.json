@@ -1,0 +1,15 @@
+{
+  "name": "talentforge-ai",
+  "version": "3.2.0",
+  "private": true,
+  "description": "Evidence-Based Hiring Intelligence & Claim Verification Platform (Redrob India Runs Data & AI Challenge Deliverable)",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "install:frontend": "cd frontend && npm install",
+    "start:backend": "python -m uvicorn backend.main:app --port 8000",
+    "rank": "python rank.py --candidates \"./dataset/inner_dataset/[PUB] India_runs_data_and_ai_challenge/India_runs_data_and_ai_challenge/candidates.jsonl\" --out ./submission.csv"
+  },
+  "author": "TalentForge AI Team (Anub-356)",
+  "license": "MIT"
+}

@@ -1,0 +1,41 @@
+{
+  "team_name": "TalentForge AI Team",
+  "primary_contact": {
+    "name": "Anub-356",
+    "email": "anub-356@example.com",
+    "phone": "+91-0000000000"
+  },
+  "team_members": [
+    {
+      "name": "Anub-356",
+      "email": "anub-356@example.com",
+      "role": "Team Lead"
+    }
+  ],
+  "github_repo": "https://github.com/Anub-356/TalentForge-AI",
+  "sandbox_link": "https://colab.research.google.com/github/Anub-356/TalentForge-AI/blob/main/sandbox_demo.ipynb",
+  "reproduce_command": "python rank.py --candidates ./dataset/inner_dataset/[PUB] India_runs_data_and_ai_challenge/India_runs_data_and_ai_challenge/candidates.jsonl --out ./submission.csv",
+  "compute": {
+    "platform": "Local Windows 11 / Linux CPU sandbox",
+    "cpu_cores": 8,
+    "ram_gb": 16,
+    "python_version": "3.12.12",
+    "os": "Windows 11",
+    "uses_gpu_for_inference": false,
+    "has_network_during_ranking": false,
+    "pre_computation_required": false,
+    "pre_computation_time_minutes": 0
+  },
+  "ai_tools_used": [
+    "Claude"
+  ],
+  "ai_usage_summary": "Used Claude for release review, documentation cleanup, and metadata alignment.",
+  "methodology_summary": "Deterministic CPU-only ranker that streams the released candidate JSONL file, keeps the top 100 candidates in a bounded min-heap, and writes a reproducible CSV with stable score and candidate_id tie-breaking.",
+  "declarations": {
+    "read_submission_spec": true,
+    "code_is_original_work": true,
+    "no_collusion": true,
+    "honeypot_check_done": true,
+    "reproduction_tested": true
+  }
+}
