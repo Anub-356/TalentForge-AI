@@ -9,6 +9,14 @@
 
 **TalentForge AI** is an evidence-based hiring intelligence platform built for the **Redrob India Runs Data & AI Challenge**. Instead of ranking candidates using keywords alone, it combines career relevance, technical skill evaluation, behavioral signals, fraud detection, and explainable scoring to generate a deterministic Top-100 shortlist from the competition dataset.
 
+### Submission Highlights
+
+- ✓ **100,000+ Candidates Processed**: High-throughput single-pass streaming evaluation.
+- ✓ **Top-100 Shortlist Generated**: Exact deterministic score and ID tie-breaking.
+- ✓ **Official Validator Passed**: 100% compliant with challenge schema and submission rules.
+- ✓ **Offline CPU Execution**: Zero live network scraping or API dependencies during evaluation.
+- ✓ **Audit-Ready Reasoning**: Transparent evidence score breakdowns for every candidate.
+
 ### The Paradigm Shift
 
 ```mermaid
@@ -24,8 +32,9 @@ flowchart LR
 
 ---
 
-## Core Features
+## Core Features & Tech Stack
 
+### Key Capabilities
 - ✅ **Deterministic Ranking Engine**: Stable CPU-only evaluation pipeline guaranteeing identical results across runs.
 - ✅ **Career Evidence Scoring**: Evaluates verifiable engineering depth and experience relevance across candidate histories.
 - ✅ **JD-aware Technical Skill Evaluation**: Cross-examines claimed technical competencies against job description requirements.
@@ -33,8 +42,22 @@ flowchart LR
 - ✅ **Fraud & Padding Detection**: Automatically penalizes keyword stuffing, timeline overlap, and AI-padded content.
 - ✅ **Candidate Consistency Scoring**: Computes an internal profile consistency metric to filter unsupported claims.
 - ✅ **Explainable Rankings**: Generates transparent, audit-ready reasoning breakdowns for every shortlisted candidate.
-- ✅ **100% Offline Evaluation**: Zero live API lookups or web scraping during ranking execution.
 - ✅ **`O(N log K)` Streaming**: High-efficiency bounded min-heap memory architecture (`K=100`).
+
+### Technology Stack
+- **Core Engine**: Python (`argparse`, `heapq`, `json`)
+- **Backend Services**: FastAPI, Uvicorn, SQLAlchemy, SQLite, PyTorch, Sentence Transformers
+- **Frontend App UI**: React, Vite, Tailwind CSS, Lucide Icons
+
+---
+
+## UI Showcase & Demonstration
+
+While the competition ranking script executes offline in standard terminal environments, we also provide an interactive web dashboard for recruiters and candidates.
+
+| Landing Page | AI Intelligence & Dashboard |
+| :---: | :---: |
+| ![Landing Page Preview](frontend/public/Landing.png) | ![Recruiter Dashboard Preview](frontend/public/ai-hero.png) |
 
 ---
 
