@@ -1,7 +1,13 @@
 # TalentForge AI
 
-**Evidence-Based Hiring Intelligence & Deterministic Ranking Engine**  
+**Explainable Hiring Intelligence & Deterministic Ranking Engine**  
 *Official Submission for the Redrob India Runs Data & AI Challenge*
+
+> [!IMPORTANT]
+> **Project Scope & Repository Structure**  
+> • **Competition Submission**: Deterministic offline ranking engine CLI (`rank.py`).  
+> • **Demo Application**: FastAPI + React full-stack interface demonstrating ranking visualization.  
+> *Note: The interactive web application is provided for demonstration purposes and is not required to reproduce the official competition submission.*
 
 ---
 
@@ -27,8 +33,8 @@ flowchart LR
     KW --> Noise["Resume Inflation<br/>& Hiring Noise"]
     Noise --> Pipeline["TalentForge AI"]
     Pipeline --> Eval["Multi-Signal Evaluation"]
-    Eval --> Fraud["Fraud Detection"]
-    Fraud --> Trust["Candidate Consistency Scoring"]
+    Eval --> Fraud["Resume Integrity Analysis"]
+    Fraud --> Trust["Profile Consistency Checks"]
     Trust --> Shortlist["Explainable Top-100 Shortlist"]
 ```
 
@@ -38,11 +44,11 @@ flowchart LR
 
 ### Key Capabilities
 - ✅ **Deterministic Ranking Engine**: Stable CPU-only evaluation pipeline guaranteeing identical results across runs.
-- ✅ **Career Evidence Scoring**: Evaluates verifiable engineering depth and experience relevance across candidate histories.
+- ✅ **Career Evidence Scoring**: Evaluates structured career evidence and experience relevance across candidate histories.
 - ✅ **JD-aware Technical Skill Evaluation**: Cross-examines claimed technical competencies against job description requirements.
 - ✅ **Behavioral Intelligence**: Quantifies career progression, tenure stability, and professional trajectory.
-- ✅ **Fraud & Padding Detection**: Automatically penalizes keyword stuffing, timeline overlap, and AI-padded content.
-- ✅ **Candidate Consistency Scoring**: Computes an internal profile consistency metric to filter unsupported claims.
+- ✅ **Resume Integrity Analysis**: Automatically flags keyword stuffing, timeline overlap, and unrealistic patterns.
+- ✅ **Profile Consistency Checks**: Executes internal consistency analysis to filter unsupported claims.
 - ✅ **Explainable Rankings**: Generates transparent, audit-ready reasoning breakdowns for every shortlisted candidate.
 - ✅ **`O(N log K)` Streaming**: High-efficiency bounded min-heap memory architecture (`K=100`).
 
@@ -54,7 +60,7 @@ flowchart LR
 | **Backend API** | FastAPI, Uvicorn, SQLAlchemy |
 | **Frontend App** | React, Vite, Tailwind CSS, Lucide Icons |
 | **Database & Storage** | SQLite, Local JSONL Streaming Architecture |
-| **Machine Learning** | Sentence Transformers (`BAAI/bge-small-en-v1.5`), PyTorch |
+| **Machine Learning** | PyTorch, Sentence Transformers (`bge-small-en-v1.5` - Demo App Search) |
 
 ---
 
@@ -94,8 +100,8 @@ In today's engineering recruitment landscape, traditional ATS platforms rely hea
 ```mermaid
 flowchart TD
     Inputs["Structured Candidate Stream<br/>• Career History & Experience<br/>• Technical Skills & Projects<br/>• Educational Background<br/>• Assessment Signals"] --> Eval["Multi-Signal Evaluation Engine"]
-    Eval --> Fraud["Fraud & Padding Detector"]
-    Fraud --> Trust["Candidate Consistency Scoring"]
+    Eval --> Fraud["Resume Integrity Analysis"]
+    Fraud --> Trust["Profile Consistency Checks"]
     Trust --> Rank["Explainable Deterministic Ranker"]
     Rank --> Output["Top-100 Submission CSV & Audit Log"]
 ```
