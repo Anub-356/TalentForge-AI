@@ -7,15 +7,17 @@
 
 ## Executive Summary
 
-**TalentForge AI** is an evidence-based hiring intelligence platform built for the **Redrob India Runs Data & AI Challenge**. Instead of ranking candidates using keywords alone, it combines career relevance, technical skill evaluation, behavioral signals, fraud detection, and explainable scoring to generate a deterministic Top-100 shortlist from the competition dataset.
+**TalentForge AI** is an evidence-based hiring intelligence platform that generates deterministic and explainable candidate rankings using multi-signal evaluation instead of keyword matching. Built explicitly for the **Redrob India Runs Data & AI Challenge**.
 
 ### Submission Highlights
 
-- ✓ **100,000+ Candidates Processed**: High-throughput single-pass streaming evaluation.
-- ✓ **Top-100 Shortlist Generated**: Exact deterministic score and ID tie-breaking.
-- ✓ **Official Validator Passed**: 100% compliant with challenge schema and submission rules.
-- ✓ **Offline CPU Execution**: Zero live network scraping or API dependencies during evaluation.
-- ✓ **Audit-Ready Reasoning**: Transparent evidence score breakdowns for every candidate.
+| Metric / Property | Submission Specification & Validation Status |
+| :--- | :--- |
+| **Throughput** | **100,000+ Candidates Processed** via single-pass streaming evaluation |
+| **Output** | **Top-100 Shortlist Generated** with exact deterministic score & ID tie-breaking |
+| **Compliance** | **Official Validator Passed** (100% compliant with challenge schema) |
+| **Execution** | **Offline CPU Execution** (Zero live network scraping or API dependencies) |
+| **Auditability** | **Audit-Ready Reasoning** breakdowns for every shortlisted candidate |
 
 ### The Paradigm Shift
 
@@ -45,9 +47,14 @@ flowchart LR
 - ✅ **`O(N log K)` Streaming**: High-efficiency bounded min-heap memory architecture (`K=100`).
 
 ### Technology Stack
-- **Core Engine**: Python (`argparse`, `heapq`, `json`)
-- **Backend Services**: FastAPI, Uvicorn, SQLAlchemy, SQLite, PyTorch, Sentence Transformers
-- **Frontend App UI**: React, Vite, Tailwind CSS, Lucide Icons
+
+| Layer | Technology & Architecture |
+| :--- | :--- |
+| **Ranking Engine** | Python (`argparse`, `heapq`, `json`) |
+| **Backend API** | FastAPI, Uvicorn, SQLAlchemy |
+| **Frontend App** | React, Vite, Tailwind CSS, Lucide Icons |
+| **Database & Storage** | SQLite, Local JSONL Streaming Architecture |
+| **Machine Learning** | Sentence Transformers (`BAAI/bge-small-en-v1.5`), PyTorch |
 
 ---
 
@@ -56,21 +63,21 @@ flowchart LR
 ### Landing Page
 ![Landing Page](assets/screenshots/landing-page.png)
 
-Evidence-based hiring landing experience.
+Enterprise landing experience focused on evidence-based hiring intelligence.
 
 ---
 
 ### Recruiter Command Center
 ![Recruiter Command Center](assets/screenshots/recruiter-dashboard.png)
 
-Autonomous verification dashboard for recruiters.
+Recruiters can monitor verification throughput, fraud intelligence, trust scoring and active requisitions.
 
 ---
 
 ### Intelligence Board
 ![Intelligence Board](assets/screenshots/intelligence-board.png)
 
-Explainable candidate ranking and trust intelligence.
+Interactive explainable ranking dashboard showing candidate trust, risk indicators and reasoning.
 
 ---
 
